@@ -37,6 +37,22 @@ MONGO_PORT=27017
 MONGO_URI=mongodb://localhost:27017/main
 ```
 
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] Docker Integration
+    - [x] Dockerfile
+    - [x] Docker Compose
+- [x] MongoDB Integration
+    - [x] Mongoose
+- API
+    - [x] Measuring
+        - [x] Create
+        - [ ] Read
+        - [ ] Update
+        - [ ] Delete
+    - [ ] Rules
+
 ## Test
 
 ```bash
