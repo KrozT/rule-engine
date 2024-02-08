@@ -51,7 +51,14 @@ MONGO_URI=mongodb://localhost:27017/main
         - [ ] Read
         - [ ] Update
         - [ ] Delete
-    - [ ] Rules
+    - [x] Rules
+        - [x] Numeric
+            - [x] Equal
+            - [x] Greater Than
+            - [x] Greater Than or Equal
+            - [x] Less Than
+            - [x] Less Than or Equal
+        
 
 ## Test
 

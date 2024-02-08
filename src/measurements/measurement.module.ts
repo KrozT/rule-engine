@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Measurement, MeasurementSchema } from './measurement.model';
 import { MeasurementController } from './measurement.controller';
 import { MeasurementService } from './measurement.service';
+import { RuleService } from '../rules/rule.service';
 
 @Module({
   imports: [
@@ -14,6 +15,6 @@ import { MeasurementService } from './measurement.service';
     ]),
   ],
   controllers: [MeasurementController],
-  providers: [MeasurementService],
+  providers: [MeasurementService, RuleService],
 })
 export class MeasurementModule {}
