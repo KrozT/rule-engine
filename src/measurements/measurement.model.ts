@@ -10,16 +10,16 @@ export class Measurement extends Document {
   topic: string;
 
   @Prop({ required: false })
-  temperature: number;
+  temperature?: number;
 
   @Prop({ required: false })
-  humidity: number;
+  humidity?: number;
 
   @Prop({ required: false })
-  flow: number;
+  flow?: number;
 
   @Prop({ required: false })
-  pressure: number;
+  pressure?: number;
 }
 
 export const MeasurementSchema = SchemaFactory.createForClass(Measurement);
