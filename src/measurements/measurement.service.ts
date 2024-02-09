@@ -7,7 +7,7 @@ import { Rule } from '../rules/rule.model';
 
 @Injectable()
 export class MeasurementService {
-  private rules: Rule<Measurement>[];
+  private readonly rules: Rule<Measurement>[];
 
   constructor(
     @InjectModel(Measurement.name)
@@ -23,12 +23,27 @@ export class MeasurementService {
   }
 
   async createMeasurement(measurementData: Measurement): Promise<Measurement> {
-    for (const rule of this.rules) {
-      if (!this.ruleService.evaluateData(measurementData, rule)) {
+    const allRulesPassed = this.rules.every((rule) => {
+      if (this.ruleService.evaluateData(measurementData, rule)) {
         console.log(
-          `Measurement failed rule: ${rule.property} ${rule.operator} ${rule.value} - current value: ${measurementData[rule.property]}`,
+          `Measurement rule passed: ${rule.property} ${rule.operator} ${rule.value} | Current value: ${measurementData[rule.property]}`,
         );
+        return true;
       }
+      console.log(
+        `Measurement failed rule: ${rule.property} ${rule.operator} ${rule.value} | Current value: ${measurementData[rule.property]}`,
+      );
+      return false;
+    });
+
+    if (allRulesPassed) {
+      console.log(
+        'All rules passed, measurement has optimal values, congratulations!',
+      );
+    } else {
+      console.log(
+        'At least one rule failed, measurement has suboptimal values, please check the values and try again',
+      );
     }
 
     const createdMeasurement = new this.measurementModel(measurementData);
