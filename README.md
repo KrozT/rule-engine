@@ -45,12 +45,20 @@ MONGO_URI=mongodb://localhost:27017/main
     - [x] Docker Compose
 - [x] MongoDB Integration
     - [x] Mongoose
-- API
+- [x] API
     - [x] Measuring
         - [x] Create
-        - [ ] Read
-        - [ ] Update
-        - [ ] Delete
+        - [x] Find
+            - [x] All
+            - [x] By ID
+            - [x] By Topic
+        - [x] Update
+            - [x] By ID
+            - [x] By Topic
+        - [x] Delete
+            - [x] All
+            - [x] By ID
+            - [x] By Topic
     - [x] Rules
         - [x] Numeric
             - [x] Equal
